@@ -1,0 +1,20 @@
+# projects section data
+# If you don't have language feature(language.yml is empty), ignore "i18n" items
+# Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
+- name: Instagram Clone with Bootstrap
+  gh_user: cengizcmataraci
+  repo: instagrambootstrapclone
+  img: https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ
+  desc: Simple Instagram clone made with Bootstrap.
+
+- name: Webook
+  gh_user: cengizcmataraci
+  repo: webook
+  img: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtLKgxMkik4m1iMOncQR6RZldipVeAm5XhpA&usqp=CAU
+  desc: The book exchange site that I did as an assignment in the Ruby on Rails bootcamp.
+
+- name: Kablosuz Beyin
+  gh_user: cengizcmataraci
+  repo: kablosuzbeyin
+  img: https://kablosuzbeyin.com/wp-content/uploads/2021/01/kablosuzbeyin_500x.png
+  desc: The demo site I designed with Vue.js for Kablosuz Beyin, our social community.
