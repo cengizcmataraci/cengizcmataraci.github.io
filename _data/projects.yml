@@ -18,3 +18,9 @@
   repo: kablosuzbeyin
   img: https://kablosuzbeyin.com/wp-content/uploads/2021/01/kablosuzbeyin_500x.png
   desc: The demo site I designed with Vue.js for Kablosuz Beyin, our social community.
+
+- name: Linkedin Clone with Bootstrap
+  gh_user: cengizcmataraci
+  repo: linkedinbootstrapclone
+  img: https://i2.cnnturk.com/i/cnnturk/75/450x225/5ede055b214ed90908b80499.jpg
+  desc: Simple Linkedin clone made with Bootstrap.
