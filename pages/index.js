@@ -21,21 +21,21 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section className={utilStyles.headingMd}>
+      <section class="prose lg:prose-xl">
         <p>Hello there! I'm Cengiz!</p>
         <p>
           Software Developer who is open to learn new technologies especially in
           web programming. Trying to improve React.js and Javascript. Working
           with the aim of improving his knowledge in these fields. Currently
-          working at
+          working at{' '}
           <a href="https://www.navlungo.com">
-            <strong> Navlungo</strong>
+            <strong>Navlungo</strong>
           </a>{" "}
           as Software Developer.
         </p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section class="prose lg:prose-xl">
         <h2 className={utilStyles.headingLg}>Yazılarım</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
