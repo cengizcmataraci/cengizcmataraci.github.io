@@ -72,8 +72,8 @@ export default function Layout({ children, home }) {
               priority
               src={Profile}
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={180}
+              width={180}
               alt={name}
             />
             </div>
@@ -85,8 +85,8 @@ export default function Layout({ children, home }) {
                   priority
                   src={Profile}
                   className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
+                  height={120}
+                  width={120}
                   alt={name}
                 />
               </a>
