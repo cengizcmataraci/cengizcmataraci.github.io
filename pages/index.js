@@ -4,17 +4,21 @@ import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
 export default function Home({ allPostsData }) {
+  const { t } = useTranslation("common");
   return (
     <Layout home>
       <Head>
@@ -22,21 +26,12 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <section class="prose lg:prose-xl">
-        <p>Hello there! I'm Cengiz!</p>
-        <p>
-          Software Developer who is open to learn new technologies especially in
-          web programming. Trying to improve React.js and Javascript. Working
-          with the aim of improving his knowledge in these fields. Currently
-          working at{' '}
-          <a href="https://www.navlungo.com">
-            <strong>Navlungo</strong>
-          </a>{" "}
-          as Software Developer.
-        </p>
+        <p>{t("greetings")}</p>
+        <p>{t("bioText")}</p>
       </section>
 
       <section class="prose lg:prose-xl">
-        <h2 className={utilStyles.headingLg}>Yazılarım</h2>
+        <h2 className={utilStyles.headingLg}>{t("articles")}</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>

@@ -5,11 +5,17 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Profile from "../public/img/profile.png";
+import { useTranslation } from "react-i18next";
 
 const name = "Cengiz C. Mataraci";
 export const siteTitle = "Cengiz C. Mataraci Personal Website";
 
 export default function Layout({ children, home }) {
+  const { t, i18n } = useTranslation("about");
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div className={styles.container}>
       <Script
@@ -51,7 +57,7 @@ export default function Layout({ children, home }) {
         }}
       />
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <meta
           name="description"
           content="Cengiz C. Mataraci Personal Website"
@@ -66,6 +72,15 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
+        <div style={{ position: "absolute", top: 35, right: 200 }}>
+          <button onClick={() => changeLanguage("tr")}>
+            <strong>tr</strong>
+          </button>
+          <span> | </span>
+          <button onClick={() => changeLanguage("en")}>
+            <strong>en</strong>
+          </button>
+        </div>
         {home ? (
           <div id="profile" className={styles.profile}>
             <Image
@@ -76,7 +91,7 @@ export default function Layout({ children, home }) {
               width={180}
               alt={name}
             />
-            </div>
+          </div>
         ) : (
           <div id="profile" className={styles.profile}>
             <Link href="/">
