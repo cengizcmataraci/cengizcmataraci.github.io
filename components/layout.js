@@ -6,12 +6,28 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Profile from "../public/img/profile.png";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+import light from "../public/img/light.png";
+import dark from "../public/img/dark.png";
 
 const name = "Cengiz C. Mataraci";
 export const siteTitle = "Cengiz C. Mataraci Personal Website";
 
 export default function Layout({ children, home }) {
   const { t, i18n } = useTranslation("about");
+  const { theme, setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const switchTheme = () => {
+    if (isMounted) {
+      setTheme(theme === "light" ? "dark" : "light");
+    }
+  };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -73,6 +89,14 @@ export default function Layout({ children, home }) {
       </Head>
       <header className={styles.header}>
         <div style={{ position: "absolute", top: 35, right: 200 }}>
+          <button onClick={() => switchTheme()}>
+            {theme === "dark" ? (
+              <Image priority src={light} height={50} width={70} alt={light} />
+            ) : (
+              <Image priority src={dark} height={50} width={50} alt={dark} />
+            )}
+          </button>
+          <span> | </span>
           <button onClick={() => changeLanguage("tr")}>
             <strong>tr</strong>
           </button>

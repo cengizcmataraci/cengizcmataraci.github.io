@@ -25,21 +25,23 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section class="prose lg:prose-xl">
+      <section class="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
         <p>{t("greetings")}</p>
         <p>{t("bioText")}</p>
       </section>
 
-      <section class="prose lg:prose-xl">
-        <h2 className={utilStyles.headingLg}>{t("articles")}</h2>
-        <ul className={utilStyles.list}>
+      <section>
+        <h2 class="text-stone-900 dark:text-neutral-300 mt-6 mb-5 text-2xl font-medium tracking-tight">
+          {t("articles")}
+        </h2>
+        <ul class="list-none p-0 m-0">
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li class="mb-4 text-stone-900 dark:text-neutral-400" key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small class="text-neutral-500">
                 <Date dateString={date} />
               </small>
             </li>
