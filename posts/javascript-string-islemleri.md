@@ -3,7 +3,6 @@ title: 'Javascript’te String İşlemleri'
 date: '2021-12-30'
 ---
 
-## Javascript’te String İşlemleri
 Merhaba. Bu yazımda Javascript çalışırken öğrendiğim ve oldukça kullanışlı olan bazı string işlemlerinden bahsedeceğim. Bunlara geçmeden önce string nedir, Javascript’te nasıl tanımlanır ve kullanılır bunlardan bahsetmek istiyorum.
 ___
 ![image](https://miro.medium.com/max/500/1*jceMJt99xJJgk3MBSy5G1g.jpeg)
@@ -11,7 +10,9 @@ ___
 Programlama dillerinin neredeyse hepsinde gördüğünüz string bir veri türüdür. Metinsel verileri depolamaya yarar. Bazı dillerde bir dizi olan string bazı dillerde kendi türüne sahiptir. Javascript’te kullandığımız string bir dizi değildir fakat string işlemleri yapılarak bir diziye çevrilip çeşitli işlemler uygulanabilir.
 String kavramını bir örnek ile pekiştirelim. Örneğin öğrenci isimlerini saklamak istiyorsunuz. Bunun için bir değişken tanımlamanız gerekli.
 
-`let 001_student = “Jeffrey Lebowski”;`
+```
+let 001_student = “Jeffrey Lebowski”;
+```
 
 Burada yaptığımız üzerine konuşalım. **let** tipinde ve **001_student** adında bir değişken tanımladık ve bunu tırnak içine aldığımız bir metine eşitledik. Burada önemli olan nokta tırnak işareti çünkü string veri türünü kullanırken ya **çift tırnak**, ya **tek tırnak**, ya da **backtick** dediğimiz `` işareti kullanılır. Değişken tipiniz ne olursa olsun içerisinde tırnak içinde yazdığınız değer string olarak kabul edilir. Başka dillerde genelde ‘string’ veri türü şeklinde görmüş olabilirsiniz. *(string 001_student = “Cengiz C. Mataracı” gibi)* Fakat Javascript dinamik bir programlama dili olduğu için değişken tipi belirtmemize gerek yoktur. Parantez içindeki durum yalnızca statik programlama dillerine özgüdür.
 
@@ -23,7 +24,9 @@ String içinde arama yapmak için birçok metod mevcuttur. Bunlardan en çok kul
 ### indexOf
 indexOf string içinde arama yapmak için kullanılan metodlardan biridir. Elimizde
 
-`let dude = “The rug really tied the room together.”;`
+```
+let dude = “The rug really tied the room together.”;
+```
 
 Bu metinden rug kelimesini almak istersek aşağıdaki gibi bir şey yazabiliriz.
 
