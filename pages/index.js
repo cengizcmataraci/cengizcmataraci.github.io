@@ -2,10 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { BsGithub, BsLinkedin, BsMedium } from "react-icons/bs";
+import { MdMail } from "react-icons/md";
+import { BiBrain } from "react-icons/bi";
+import { ImPower } from "react-icons/im";
 
 export async function getStaticProps({ locale }) {
   const allPostsData = getSortedPostsData();
@@ -28,9 +31,57 @@ export default function Home({ allPostsData }) {
       <section class="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
         <p>{t("greetings")}</p>
         <p>{t("bioText")}</p>
+        <div class="flex justify-center">
+          <div class="mr-3">
+            <a
+              href="https://github.com/cengizcmataraci/"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              alt="Github"
+            >
+              <BsGithub size="1.35rem" />
+            </a>
+          </div>
+          <div class="mr-3">
+            <a
+              href="https://linkedin.com/in/cengizcmataraci/"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              <BsLinkedin size="1.35rem" />
+            </a>
+          </div>
+          <div class="mr-3">
+            <a
+              href="https://medium.com/@cengizcmataraci"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              <BsMedium size="1.35rem" />
+            </a>
+          </div>
+          <div class="mr-3">
+            <a
+              href="mailto:cengizcmataraci@gmail.com"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              <MdMail size="1.35rem" />
+            </a>
+          </div>
+          <div class="mr-3">
+            <a
+              href="https://www.kablosuzbeyin.com"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              <BiBrain size="1.35rem" />
+            </a>
+          </div>
+        </div>
       </section>
 
-      <section>
+      {/* <section>
         <h2 class="text-stone-900 dark:text-neutral-300 mt-6 mb-5 text-2xl font-medium tracking-tight">
           {t("articles")}
         </h2>
@@ -47,6 +98,21 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      </section> */}
+      <section>
+        <div class="flex justify-start">
+          <div class="mr-3">
+            <ImPower size="1.35rem" />
+          </div>
+          <div class="mr-3">
+            <Link
+              href="/about"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              About
+            </Link>
+          </div>
+        </div>
       </section>
     </Layout>
   );
