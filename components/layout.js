@@ -97,7 +97,7 @@ export default function Layout({ children, home, about }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header>
         <div style={{ position: "absolute", top: 35, right: 200 }}>
           <Switch
             onChange={handleChange}
@@ -133,6 +133,11 @@ export default function Layout({ children, home, about }) {
             height={24}
             width={48}
           />
+          <div class="mt-7 text-lg font-bold tracking-tighter  text-stone-900 dark:text-neutral-400">
+            <Link href="/about" class="">
+              <a>./about</a>
+            </Link>
+          </div>
           {/* TODO: multilanguage including markdown */}
           {/* <span> | </span>
           <button onClick={() => changeLanguage("tr")}>
@@ -143,6 +148,7 @@ export default function Layout({ children, home, about }) {
             <strong>en</strong>
           </button> */}
         </div>
+
         {home || about ? (
           <div id="profile" className={styles.profile}>
             <Image
