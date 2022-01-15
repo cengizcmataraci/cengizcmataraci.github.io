@@ -8,13 +8,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "date-fns": "^2.28.0",
     "gray-matter": "^4.0.3",
-    "next": "^12.0.7",
+    "next": "^12.0.8",
     "next-i18next": "^10.1.0",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-switch": "^6.0.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1"
   },
