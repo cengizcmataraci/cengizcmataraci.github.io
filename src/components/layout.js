@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Switch from "react-switch";
 import { IconContext } from "react-icons";
 import { IoSunnyOutline, IoMoon } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const name = "Cengiz C. Mataraci";
 export const siteTitle = "Cengiz C. Mataraci Personal Website";
@@ -41,46 +42,14 @@ export default function Layout({ children, home, about }) {
   //   router.replace(router.pathname, router.pathname, { locale: lng });
   // };
 
+  const variants = {
+    hidden: { opacity: 0, x: -200, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
+  };
+
   return (
     <div className={styles.container}>
-      <Script
-        id="profile"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: `
-        let el = document.getElementById('profile')
-
-        const height = el.clientHeight
-        const width = el.clientWidth
-
-        el.addEventListener('mousemove', handleMove)
-
-        function handleMove(e) {
-          const xVal = e.layerX
-          const yVal = e.layerY
-
-          const yRotation = 20 * ((xVal - width / 2) / width)
-
-          const xRotation = -20 * ((yVal - height / 2) / height)
-
-          const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
-
-          el.style.transform = string
-        }
-
-        el.addEventListener('mouseout', function() {
-          el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
-        })
-
-        el.addEventListener('mousedown', function() {
-          el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
-        })
-
-        el.addEventListener('mouseup', function() {
-          el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-        })`,
-        }}
-      />
       <Head>
         <link rel="icon" href="/favicon.png" />
         <meta
@@ -132,8 +101,8 @@ export default function Layout({ children, home, about }) {
             height={24}
             width={48}
           />
-          <div class="mt-7 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
-            <Link href="/about" class="">
+          <div class="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
+            <Link href="/about">
               <a>./about</a>
             </Link>
           </div>
@@ -147,17 +116,21 @@ export default function Layout({ children, home, about }) {
             <strong>en</strong>
           </button> */}
         </div>
-
         {home || about ? (
           <div id="profile" className={styles.profile}>
-            <Image
-              priority
-              src={Profile}
-              className={utilStyles.borderCircle}
-              height={180}
-              width={180}
-              alt={name}
-            />
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image
+                priority
+                src={Profile}
+                className={utilStyles.borderCircle}
+                height={180}
+                width={180}
+                alt={name}
+              />
+            </motion.button>
           </div>
         ) : (
           <div id="profile" className={styles.profile}>
@@ -176,14 +149,24 @@ export default function Layout({ children, home, about }) {
           </div>
         )}
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+
+      <motion.main
+        variants={variants}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        transition={{ type: "linear" }}
+        className=""
+      >
+        <main>{children}</main>
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
+        )}
+      </motion.main>
     </div>
   );
 }
