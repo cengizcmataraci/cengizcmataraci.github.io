@@ -5,10 +5,9 @@ import Layout, { siteTitle } from "../src/components/layout";
 import { getSortedPostsData } from "../src/lib/posts";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { BsGithub, BsLinkedin, BsMedium } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsMedium, BsTwitter } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 import { BiBrain } from "react-icons/bi";
-import { ImPower } from "react-icons/im";
 
 export async function getStaticProps({ locale }) {
   const allPostsData = getSortedPostsData();
@@ -49,6 +48,15 @@ export default function Home({ allPostsData }) {
               class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <BsLinkedin size="1.35rem" />
+            </a>
+          </div>
+          <div class="mr-3">
+            <a
+              href="https://twitter.com/saucecover/"
+              target="_blank"
+              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            >
+              <BsTwitter size="1.35rem" />
             </a>
           </div>
           <div class="mr-3">
