@@ -1,37 +1,47 @@
 import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
 import Profile from "../public/img/profile.png";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import light from "../public/img/light.png";
-import dark from "../public/img/dark.png";
+import Switch from "react-switch";
+import { IconContext } from "react-icons";
+import { IoSunnyOutline, IoMoon } from "react-icons/io5";
 
 const name = "Cengiz C. Mataraci";
 export const siteTitle = "Cengiz C. Mataraci Personal Website";
 
-export default function Layout({ children, home }) {
-  const { t, i18n } = useTranslation("about");
+export default function Layout({ children, home, about }) {
+  const router = useRouter();
+  // const { t, i18n } = useTranslation("about");
   const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [checked, setChecked] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === "light" ? "dark" : "light");
-    }
+
+  useEffect(() => {
+    setTheme(checked ? "dark" : "light");
+  }, [checked, setTheme]);
+
+  const handleChange = (nextChecked) => {
+    setChecked(nextChecked);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  if (!isMounted) return null;
+
+  // const changeLanguage = (lng) => {
+  //   router.replace(router.pathname, router.pathname, { locale: lng });
+  // };
+
   return (
     <div className={styles.container}>
       <Script
@@ -89,23 +99,51 @@ export default function Layout({ children, home }) {
       </Head>
       <header className={styles.header}>
         <div style={{ position: "absolute", top: 35, right: 200 }}>
-          <button onClick={() => switchTheme()}>
-            {theme === "dark" ? (
-              <Image priority src={light} height={50} width={70} alt={light} />
-            ) : (
-              <Image priority src={dark} height={50} width={50} alt={dark} />
-            )}
-          </button>
-          <span> | </span>
+          <Switch
+            onChange={handleChange}
+            checked={checked}
+            aria-label="theme switcher"
+            offColor="#555"
+            onHandleColor="#eee"
+            handleDiameter={20}
+            uncheckedIcon={
+              <div className="flex justify-center items-center h-full">
+                <IconContext.Provider
+                  value={{
+                    color: "gold",
+                    size: "80%",
+                  }}
+                >
+                  <IoSunnyOutline />
+                </IconContext.Provider>
+              </div>
+            }
+            checkedIcon={
+              <div className="flex justify-center items-center h-full">
+                <IconContext.Provider
+                  value={{
+                    color: "yellow",
+                    size: "80%",
+                  }}
+                >
+                  <IoMoon />
+                </IconContext.Provider>
+              </div>
+            }
+            height={24}
+            width={48}
+          />
+          {/* TODO: multilanguage including markdown */}
+          {/* <span> | </span>
           <button onClick={() => changeLanguage("tr")}>
             <strong>tr</strong>
           </button>
           <span> | </span>
           <button onClick={() => changeLanguage("en")}>
             <strong>en</strong>
-          </button>
+          </button> */}
         </div>
-        {home ? (
+        {home || about ? (
           <div id="profile" className={styles.profile}>
             <Image
               priority
