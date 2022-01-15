@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 import "tailwindcss/tailwind.css";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";

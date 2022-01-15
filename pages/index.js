@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import Date from "../components/date";
-import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/posts";
+import Date from "../src/components/date";
+import Layout, { siteTitle } from "../src/components/layout";
+import { getSortedPostsData } from "../src/lib/posts";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { BsGithub, BsLinkedin, BsMedium } from "react-icons/bs";
