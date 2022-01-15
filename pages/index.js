@@ -99,21 +99,6 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section> */}
-      <section>
-        <div class="flex justify-start">
-          <div class="mr-3">
-            <ImPower size="1.35rem" />
-          </div>
-          <div class="mr-3">
-            <Link
-              href="/about"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
-            >
-              About
-            </Link>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
