@@ -122,14 +122,18 @@ export default function Layout({ children, home, about }) {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Image
-                priority
-                src={Profile}
-                className={utilStyles.borderCircle}
-                height={180}
-                width={180}
-                alt={name}
-              />
+              <Link href="/">
+                <a>
+                  <Image
+                    priority
+                    src={Profile}
+                    className={utilStyles.borderCircle}
+                    height={180}
+                    width={180}
+                    alt={name}
+                  />
+                </a>
+              </Link>
             </motion.button>
           </div>
         ) : (
@@ -158,13 +162,16 @@ export default function Layout({ children, home, about }) {
         transition={{ type: "linear" }}
         className=""
       >
-        <main>{children}</main>
+        <main style={{ marginTop: -50 }}>{children}</main>
         {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
-          </div>
+          <>
+            <div style={{ marginTop: "3rem", marginBottom: "3rem" }}>
+              <Link href="/">
+                <a>← Back to home</a>
+              </Link>
+            </div>
+            <div>&nbsp;</div>
+          </>
         )}
       </motion.main>
     </div>
