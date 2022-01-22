@@ -106,6 +106,11 @@ export default function Layout({ children, home, about }) {
               <a>./about</a>
             </Link>
           </div>
+          <div class="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
+            <Link href="/blog">
+              <a>./blog</a>
+            </Link>
+          </div>
           {/* TODO: multilanguage including markdown */}
           {/* <span> | </span>
           <button onClick={() => changeLanguage("tr")}>
