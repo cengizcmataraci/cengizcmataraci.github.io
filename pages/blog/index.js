@@ -24,12 +24,15 @@ export default function Blog({ posts }) {
         <ol>
           {posts.map((post) => (
             <li
-              className="mt-6 font-bold text-stone-900 dark:text-neutral-400"
+              className="mt-7 text-stone-900 dark:text-neutral-400"
               key={post.id}
             >
               <Link href={`/blog/${post.id}`}>
-                <a>
+                <a className="text-2xl font-bold">
                   <Text text={post.properties.Name.title} />
+                  <p className="text-lg font-thin">
+                    {post.properties.description?.rich_text[0]?.plain_text}
+                  </p>
                 </a>
               </Link>
             </li>
