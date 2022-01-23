@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
-import Date from "../src/components/date";
 import Layout, { siteTitle } from "../src/components/layout";
-import { getSortedPostsData } from "../src/lib/posts";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { BsGithub, BsLinkedin, BsMedium, BsTwitter } from "react-icons/bs";
@@ -10,16 +7,14 @@ import { MdMail } from "react-icons/md";
 import { BiBrain } from "react-icons/bi";
 
 export async function getStaticProps({ locale }) {
-  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   const { t } = useTranslation("common");
   return (
     <Layout home>
