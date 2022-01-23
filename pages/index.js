@@ -27,61 +27,67 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section class="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
+      <section className="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
         <p>{t("greetings")}</p>
         <p>{t("bioText")}</p>
-        <div class="flex justify-center">
-          <div class="mr-3">
+        <div className="flex justify-center">
+          <div className="mr-3">
             <a
               href="https://github.com/cengizcmataraci/"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
               alt="Github"
             >
               <BsGithub size="1.35rem" />
             </a>
           </div>
-          <div class="mr-3">
+          <div className="mr-3">
             <a
               href="https://linkedin.com/in/cengizcmataraci/"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <BsLinkedin size="1.35rem" />
             </a>
           </div>
-          <div class="mr-3">
+          <div className="mr-3">
             <a
               href="https://twitter.com/saucecover/"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <BsTwitter size="1.35rem" />
             </a>
           </div>
-          <div class="mr-3">
+          <div className="mr-3">
             <a
               href="https://medium.com/@cengizcmataraci"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <BsMedium size="1.35rem" />
             </a>
           </div>
-          <div class="mr-3">
+          <div className="mr-3">
             <a
               href="mailto:cengizcmataraci@gmail.com"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <MdMail size="1.35rem" />
             </a>
           </div>
-          <div class="mr-3">
+          <div className="mr-3">
             <a
               href="https://www.kablosuzbeyin.com"
               target="_blank"
-              class="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              rel="noopener noreferrer"
+              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
             >
               <BiBrain size="1.35rem" />
             </a>

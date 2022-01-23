@@ -15,23 +15,26 @@ export default function Blog({ posts }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section>
-        <div class="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
-          <h3 class="text-3xl font-bold tracking-tighter text-stone-900 dark:text-neutral-300">
+      <section style={{ marginTop: -110 }}>
+        <div className="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
+          <h3 className="text-3xl font-bold tracking-tighter text-stone-900 dark:text-neutral-300">
             Blog
           </h3>
-          <ol>
-            {posts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/blog/${post.id}`}>
-                  <a>
-                    <Text text={post.properties.Name.title} />
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ol>
         </div>
+        <ol>
+          {posts.map((post) => (
+            <li
+              className="mt-6 font-bold text-stone-900 dark:text-neutral-400"
+              key={post.id}
+            >
+              <Link href={`/blog/${post.id}`}>
+                <a>
+                  <Text text={post.properties.Name.title} />
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
     </Layout>
   );

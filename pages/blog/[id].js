@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { Fragment } from "react";
 import { getDatabase, getPage, getBlocks } from "../../src/lib/notion";
 import { databaseId } from "./index.js";
@@ -69,7 +70,7 @@ const renderBlock = (block) => {
       const caption = value.caption ? value.caption[0].plain_text : "";
       return (
         <figure>
-          <img src={src} alt={caption} />
+          <Image src={src} alt={caption} />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
@@ -89,8 +90,11 @@ export default function Post({ page, blocks }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <article>
-        <h1>
+      <article
+        className="prose dark:prose-invert dark:text-neutral-300"
+        style={{ marginTop: -80 }}
+      >
+        <h1 className="text-4xl font-bold tracking-tighter text-stone-900 dark:text-neutral-300">
           <Text text={page.properties.Name.title} />
         </h1>
         <section>
@@ -116,8 +120,6 @@ export const getStaticProps = async (context) => {
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 
-  // Retrieve block children for nested blocks (one level deep), for example toggle blocks
-  // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
   const childBlocks = await Promise.all(
     blocks
       .filter((block) => block.has_children)
@@ -129,7 +131,6 @@ export const getStaticProps = async (context) => {
       })
   );
   const blocksWithChildren = blocks.map((block) => {
-    // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
       block[block.type]["children"] = childBlocks.find(
         (x) => x.id === block.id

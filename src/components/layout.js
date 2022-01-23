@@ -101,12 +101,12 @@ export default function Layout({ children, home, about }) {
             height={24}
             width={48}
           />
-          <div class="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
+          <div className="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
             <Link href="/about">
               <a>./about</a>
             </Link>
           </div>
-          <div class="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
+          <div className="mt-6 text-lg font-bold tracking-tighter text-stone-900 dark:text-neutral-400">
             <Link href="/blog">
               <a>./blog</a>
             </Link>
@@ -143,18 +143,23 @@ export default function Layout({ children, home, about }) {
           </div>
         ) : (
           <div id="profile" className={styles.profile}>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src={Profile}
-                  className={utilStyles.borderCircle}
-                  height={120}
-                  width={120}
-                  alt={name}
-                />
-              </a>
-            </Link>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Link href="/">
+                <a>
+                  <Image
+                    priority
+                    src={Profile}
+                    className={utilStyles.borderCircle}
+                    height={120}
+                    width={120}
+                    alt={name}
+                  />
+                </a>
+              </Link>
+            </motion.button>
           </div>
         )}
       </header>
