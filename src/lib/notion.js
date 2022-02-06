@@ -11,8 +11,8 @@ export const getDatabase = async (databaseId) => {
   return response.results;
 };
 
-export const getPage = async (pageId) => {
-  const response = await notion.pages.retrieve({ page_id: pageId });
+export const getPage = async (id) => {
+  const response = await notion.pages.retrieve({ page_id: id });
   return response;
 };
 
