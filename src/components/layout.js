@@ -66,7 +66,7 @@ export default function Layout({ children, home, about }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header>
-        <div style={{ position: "absolute", top: 35, right: 200 }}>
+        <div className={styles.right}>
           <Switch
             onChange={handleChange}
             checked={checked}
