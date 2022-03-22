@@ -18,6 +18,18 @@
   transition: box-shadow 0.1s, transform 0.1s;
 }
 
+.right {
+  position: absolute;
+  top: 35px;
+  right: 200px;
+}
+
+@media (min-width: 999px) {
+  .right {
+    right: 250px;
+  }
+}
+
 .profile:hover {
   cursor: pointer;
 }
