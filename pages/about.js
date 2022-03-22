@@ -15,10 +15,19 @@ export default function About() {
             About Me
           </h3>
           <p>
-            I am Cengiz, 25 and living in Turkey. I am currently working as a
-            front-end developer and I follow front-end technologies with
-            amazement. Technology is my playground I usually fall down, get up
-            and try not to fall down again.
+            I am Cengiz, 25 and living in Turkey. I am a front-end developer and
+            I follow front-end technologies with amazement. I am currently
+            working at{" "}
+            <a
+              href="https://www.navlungo.com"
+              target="_blank"
+              rel="noreferrer"
+              className="visited:text-neutral-300 no-underline"
+            >
+              <b>Navlungo</b>
+            </a>
+            . Technology is my playground I usually fall down, get up and try
+            not to fall down again.
           </p>
           <p>
             I&quot;m currently writing React.js and also keep learning. Also,
