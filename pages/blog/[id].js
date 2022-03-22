@@ -1,9 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Fragment } from "react";
 import { getDatabase, getPage, getBlocks } from "../../src/lib/notion";
 import { databaseId } from "./index.js";
 import { Text } from "../../src/components/text";
+import Head from "next/head";
+import Link from "next/link";
 import Layout, { siteTitle } from "../../src/components/layout";
 
 const renderBlock = (block) => {
@@ -70,7 +70,7 @@ const renderBlock = (block) => {
       const caption = value.caption ? value.caption[0].plain_text : "";
       return (
         <figure>
-          <Image src={src} alt={caption} />
+          <img src={src} alt={caption} />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
