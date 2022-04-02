@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { getDatabase } from "../../src/lib/notion";
 import { Text } from "../../src/components/text";
 
-export const databaseId = process.env.NOTION_TABLE_ID;
+export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Blog({ posts }) {
   return (
