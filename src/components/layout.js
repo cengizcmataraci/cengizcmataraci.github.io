@@ -66,7 +66,9 @@ export default function Layout({ children, home, about, blogDetail }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <div style={{ display: "flex", flexDirection: "column", gap: '1.25rem' }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
+        >
           <Switch
             onChange={handleChange}
             checked={checked}
@@ -130,6 +132,7 @@ export default function Layout({ children, home, about, blogDetail }) {
               <Link href="/">
                 <a>
                   <Image
+                    loader
                     priority
                     src={Profile}
                     className={utilStyles.borderCircle}
@@ -150,6 +153,7 @@ export default function Layout({ children, home, about, blogDetail }) {
               <Link href="/">
                 <a>
                   <Image
+                    loader
                     priority
                     src={Profile}
                     className={utilStyles.borderCircle}
