@@ -15,7 +15,7 @@ export default function About() {
             About Me
           </h3>
           <p>
-            I am Cengiz, 25 and living in Turkey. I am a front-end developer and
+            Hello there, I am Cengiz. I am a front-end developer from Turkey and
             I follow front-end technologies with amazement. I am currently
             working at{" "}
             <a
