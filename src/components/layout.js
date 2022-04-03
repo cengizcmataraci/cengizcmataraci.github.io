@@ -66,7 +66,7 @@ export default function Layout({ children, home, about, blogDetail }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: '1.25rem' }}>
           <Switch
             onChange={handleChange}
             checked={checked}
@@ -111,8 +111,9 @@ export default function Layout({ children, home, about, blogDetail }) {
               <a>./blog</a>
             </Link>
           </div>
-          {/* TODO: multilanguage including markdown */}
-          {/* <span> | </span>
+        </div>
+        {/* TODO: multilanguage including markdown */}
+        {/* <span> | </span>
           <button onClick={() => changeLanguage("tr")}>
             <strong>tr</strong>
           </button>
@@ -120,7 +121,6 @@ export default function Layout({ children, home, about, blogDetail }) {
           <button onClick={() => changeLanguage("en")}>
             <strong>en</strong>
           </button> */}
-        </div>
         {home || about ? (
           <div id="profile" className={styles.profile}>
             <motion.button
