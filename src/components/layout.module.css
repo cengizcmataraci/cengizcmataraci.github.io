@@ -1,13 +1,24 @@
 .container {
-  max-width: 36rem;
+  max-width: 60rem;
   padding: 0 1rem;
   margin: 5rem auto 6rem;
 }
 
 .header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.main {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: -3rem auto 6rem;
+}
+
+.bottomlink {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 1rem auto 6rem;
 }
 
 .profile {
@@ -32,4 +43,20 @@
 
 .profile:hover {
   cursor: pointer;
+}
+
+.github:hover {
+  color: #ffffff;
+}
+.linkedin:hover {
+  color: #0a66c2;
+}
+.twitter:hover {
+  color: #1ca6d6;
+}
+.mail:hover {
+  color: #95d1cc;
+}
+.brain:hover {
+  color: #fd5d5d;
 }
