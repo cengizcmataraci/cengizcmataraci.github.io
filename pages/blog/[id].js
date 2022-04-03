@@ -86,7 +86,7 @@ export default function Post({ page, blocks }) {
     return <div />;
   }
   return (
-    <Layout>
+    <Layout blogDetail>
       <Head>
         <title>{siteTitle}</title>
       </Head>
