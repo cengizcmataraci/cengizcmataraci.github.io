@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 const name = "Cengiz C. Mataraci";
 export const siteTitle = "Cengiz C. Mataraci Personal Website";
 
-export default function Layout({ children, home, about }) {
+export default function Layout({ children, home, about, blogDetail }) {
   const router = useRouter();
   // const { t, i18n } = useTranslation("about");
   const { theme, setTheme } = useTheme();
@@ -65,8 +65,8 @@ export default function Layout({ children, home, about }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        <div className={styles.right}>
+      <header className={styles.header}>
+        <div>
           <Switch
             onChange={handleChange}
             checked={checked}
@@ -170,15 +170,24 @@ export default function Layout({ children, home, about }) {
         animate="enter"
         exit="exit"
         transition={{ type: "linear" }}
-        className=""
       >
-        <main style={{ marginTop: -50 }}>{children}</main>
+        <main className={styles.main}>{children}</main>
         {!home && (
           <>
-            <div style={{ marginTop: "3rem", marginBottom: "3rem" }}>
-              <Link href="/">
-                <a>← Back to home</a>
-              </Link>
+            <div className={styles.bottomlink}>
+              {blogDetail ? (
+                <Link href="/blog">
+                  <a>
+                    <b>← Back to Blog</b>
+                  </a>
+                </Link>
+              ) : (
+                <Link href="/">
+                  <a>
+                    <b>← Back to home</b>
+                  </a>
+                </Link>
+              )}
             </div>
             <div>&nbsp;</div>
           </>
