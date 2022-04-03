@@ -5,6 +5,8 @@ import { useTranslation } from "next-i18next";
 import { BsGithub, BsLinkedin, BsMedium, BsTwitter } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 import { BiBrain } from "react-icons/bi";
+import { motion } from "framer-motion";
+import styles from "../src/components/layout.module.css";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -27,87 +29,98 @@ export default function Home() {
         <p>{t("bioText")}</p>
         <div className="flex justify-center">
           <div className="mr-3">
-            <a
-              href="https://github.com/cengizcmataraci/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
-              alt="Github"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <BsGithub size="1.35rem" />
-            </a>
+              <a
+                href="https://github.com/cengizcmataraci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+                alt="Github"
+              >
+                <BsGithub size="1.35rem" className={styles.github} />
+              </a>
+            </motion.button>
           </div>
           <div className="mr-3">
-            <a
-              href="https://linkedin.com/in/cengizcmataraci/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <BsLinkedin size="1.35rem" />
-            </a>
+              <a
+                href="https://linkedin.com/in/cengizcmataraci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              >
+                <BsLinkedin size="1.35rem" className={styles.linkedin} />
+              </a>
+            </motion.button>
           </div>
           <div className="mr-3">
-            <a
-              href="https://twitter.com/saucecover/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <BsTwitter size="1.35rem" />
-            </a>
+              <a
+                href="https://twitter.com/saucecover/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              >
+                <BsTwitter size="1.35rem" className={styles.twitter} />
+              </a>
+            </motion.button>
           </div>
           <div className="mr-3">
-            <a
-              href="https://medium.com/@cengizcmataraci"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <BsMedium size="1.35rem" />
-            </a>
+              <a
+                href="https://medium.com/@cengizcmataraci"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              >
+                <BsMedium size="1.35rem" />
+              </a>
+            </motion.button>
           </div>
           <div className="mr-3">
-            <a
-              href="mailto:cengizcmataraci@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <MdMail size="1.35rem" />
-            </a>
+              <a
+                href="mailto:cengizcmataraci@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              >
+                <MdMail size="1.35rem" className={styles.mail} />
+              </a>
+            </motion.button>
           </div>
           <div className="mr-3">
-            <a
-              href="https://www.kablosuzbeyin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+            <motion.button
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <BiBrain size="1.35rem" />
-            </a>
+              <a
+                href="https://www.kablosuzbeyin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-900 prose lg:prose-xl dark:text-neutral-400"
+              >
+                <BiBrain size="1.35rem" className={styles.brain} />
+              </a>
+            </motion.button>
           </div>
         </div>
       </section>
-
-      {/* <section>
-        <h2 class="text-stone-900 dark:text-neutral-300 mt-6 mb-5 text-2xl font-medium tracking-tight">
-          {t("articles")}
-        </h2>
-        <ul class="list-none p-0 m-0">
-          {allPostsData.map(({ id, date, title }) => (
-            <li class="mb-4 text-stone-900 dark:text-neutral-400" key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small class="text-neutral-500">
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section> */}
     </Layout>
   );
 }
