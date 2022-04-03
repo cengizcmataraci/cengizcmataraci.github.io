@@ -1,23 +1,12 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../src/components/layout";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import { BsGithub, BsLinkedin, BsMedium, BsTwitter } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 import { BiBrain } from "react-icons/bi";
 import { motion } from "framer-motion";
 import styles from "../src/components/layout.module.css";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
-}
-
 export default function Home() {
-  const { t } = useTranslation("common");
   return (
     <Layout home>
       <Head>
@@ -25,8 +14,14 @@ export default function Home() {
       </Head>
 
       <section className="text-stone-900 prose lg:prose-xl dark:text-neutral-400">
-        <p>{t("greetings")}</p>
-        <p>{t("bioText")}</p>
+        <p>Hello there! I&apos;m Cengiz!</p>
+        <p>
+          Software Developer that is open to learn new technologies especially
+          in web programming. Trying to improve JavaScript stack (Such as
+          React.js, Next.js, Node.js and Three.js etc.). Working with the aim of
+          improving his knowledge in these fields. Currently working at Navlungo
+          as Software Developer.
+        </p>
         <div className="flex justify-center">
           <div className="mr-3">
             <motion.button

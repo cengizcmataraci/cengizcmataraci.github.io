@@ -1,6 +1,5 @@
 import "../src/styles/globals.css";
 import "tailwindcss/tailwind.css";
-import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }) {
@@ -11,4 +10,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
