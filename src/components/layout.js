@@ -132,7 +132,6 @@ export default function Layout({ children, home, about, blogDetail }) {
               <Link href="/">
                 <a>
                   <Image
-                    loader
                     priority
                     src={Profile}
                     className={utilStyles.borderCircle}
@@ -153,7 +152,6 @@ export default function Layout({ children, home, about, blogDetail }) {
               <Link href="/">
                 <a>
                   <Image
-                    loader
                     priority
                     src={Profile}
                     className={utilStyles.borderCircle}
