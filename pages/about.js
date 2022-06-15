@@ -19,12 +19,12 @@ export default function About() {
             I follow front-end technologies with amazement. I am currently
             working at{" "}
             <a
-              href="https://www.navlungo.com"
+              href="https://www.trendyol.com"
               target="_blank"
               rel="noreferrer"
               className="visited:text-neutral-300 no-underline"
             >
-              <b>Navlungo</b>
+              <b>Trendyol</b>
             </a>
             . Technology is my playground I usually fall down, get up and try
             not to fall down again.
