@@ -19,7 +19,7 @@ export default function Home() {
           Software Developer that is open to learn new technologies especially
           in web programming. Trying to improve JavaScript stack (Such as
           React.js, Next.js, Node.js and Three.js etc.). Working with the aim of
-          improving his knowledge in these fields. Currently working at Navlungo
+          improving his knowledge in these fields. Currently working at Trendyol
           as Software Developer.
         </p>
         <div className="flex justify-center">
